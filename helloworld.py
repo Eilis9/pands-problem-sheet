@@ -1,2 +1,1 @@
-# Says hello
-print("Hello World!")	
+print ("Hello World!")
