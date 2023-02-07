@@ -3,8 +3,10 @@
 helloworld.py prints **Hello World!**
 ## Task 2
 bank.py
-Program asks user for inputs in cents which are stored as ints
-Adds the 2 inputs
-Converts the total to euros
-Outputs a message to display the total formatting the float to 2 decimal places
+ - Program asks user for 2 inputs in cents which are stored as ints
+ - Adds the 2 inputs 
+ - Converts the total to euros
+ - Outputs a message to display the total, formatting the float to 2 decimal places
+ Refs:
+ String formatting: https://www.w3schools.com/python/python_string_formatting.asp
 
