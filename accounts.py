@@ -6,18 +6,14 @@
 # Ask the user for 10 digit number
 user_input = input("Please enter a 10 digit account number: ")
 
-#user_input = " 0001234567890"
-# strip any whitespace from start and finish - maybe remove later.
-# Do error check instead and insist on no spaces
-
+# user_input = " 0001234567890"
+# strip any whitespace from start and finish - maybe remove later (perhaps add an error check instead).
 input_stripped = user_input.strip()
 
 # find the length of the input string (no spaces)
 input_string_length = len(input_stripped)
-# create the X leader for the output
-#output_leader = input_stripped
 
-# check if all the characters are digits 
+# check if all the characters are digits  - not used right now
 all_digits_chk = input_stripped.isdigit()
 
 #print("digit check is", all_digits_chk)
