@@ -4,9 +4,9 @@
 
 
 # Ask the user for 10 digit number
-#user_input = input("Please enter a 10 digit account number: ")
+user_input = input("Please enter a 10 digit account number: ")
 
-user_input = " 0001234567890"
+#user_input = " 0001234567890"
 # strip any whitespace from start and finish - maybe remove later.
 # Do error check instead and insist on no spaces
 
