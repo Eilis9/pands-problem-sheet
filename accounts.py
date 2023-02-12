@@ -21,11 +21,11 @@ all_digits_chk = input_stripped.isdigit()
 # Using a slice for now to get the last 4 chars of the input string
 output_string = input_stripped[-4:]
 
-# pad the output with Xs depending on the length of the user input
-output_string2 = input_stripped[-4:].rjust(input_string_length, 'X')
+# pad the output with Xs depending on the length of the user input  - inputs less than 4 digits will output just that input
+output_string_any = input_stripped[-4:].rjust(input_string_length, 'X')
 
-# print the account number with Xs for the first 6 digits and just the last 4 digits inputted
+# print the account number with 6 Xs and just the last 4 digits inputted. This assumes a 10 digit input (ignoring trailing whitespaces)
 print("XXXXXX" + output_string)
 
-# print statement for account numbers of any length
-print(output_string2)
+# print statement for account numbers of any length (inputs more than 4 digits will have leading digits padded with Xs)
+print(output_string_any)
