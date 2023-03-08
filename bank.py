@@ -1,18 +1,31 @@
-# bank.py
-# Author: Eilis Donohue
-# asks for 2 integer inputs, adds these and outputs the answer in euro
+''' bank.py
+Week 2 PANDS task assignment 
+Author: Eilis Donohue
+Prompts the user for 2 integer inputs 
+Adds these and outputs the answer in euro and cent
+'''
 
-import math
-
-# ask user for input
+# Prompt the user for input 
 input1 = int(input("Enter amount1(in cent): "))
 input2 = int(input("Enter amount2(in cent): "))
 
-# add the inputs
-totalCent = input1 + input2
+# Add the inputs
+total_cent = input1 + input2
 
-# convert to euro
-totalEuro = totalCent / 100
+# Convert total to a string type so that string formatting can be applied
+total_cent = str(total_cent)
 
-# print total formatted to 2 decimal places
-print(f"The sum of these is €{totalEuro:.2f}")
+# Last 2 digits of the string is the cent amount and everything else is euro.
+# This avoids dividing and float types 
+
+# Unless the total_cent amount is 10c or less when leading zeroes are
+# required. 
+leading_zeroes = "0" * (3 - len(total_cent))
+total_cent = leading_zeroes + total_cent    
+
+# String slices to get the euro amount and cent amount
+euro_amount = total_cent[:-2]
+cent_amount = total_cent[-2:]
+  
+# Output the amount 
+print(f"The sum of these is €{euro_amount}.{cent_amount}")
