@@ -3,7 +3,7 @@ collatz.py
 Author: Eilis Donohue
 week 4 assignment
 take a positive integer value
-apply collatz principle to it, appending each value to a list
+apply collatz conjecture to it, appending each value to a list
 print the values of the list
 '''
 

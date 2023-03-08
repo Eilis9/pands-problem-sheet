@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Week 5 assignment
 Program which prints if the current day is a weekday or weekend
@@ -6,6 +5,7 @@ Author: Eilis Donohue
 Ref: PYnative.com/python-get-the-day-of=week
 """
 
+# import the datetime class from the datetime module
 from datetime import datetime
 # assign the current date and time to dt
 dt = datetime.now()
