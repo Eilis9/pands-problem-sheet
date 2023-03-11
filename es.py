@@ -6,6 +6,7 @@ Read in a text file (using a command line argument)
 Count the instances of a certain character in the file and output
 Text file taken from: https://github.com/laumann/ds/tree/master/hashing/books
 https://www.digitalocean.com/community/tutorials/python-command-line-arguments
+https://stackoverflow.com/questions/1155617/count-the-number-of-occurrences-of-a-character-in-a-string
 '''
 
 
