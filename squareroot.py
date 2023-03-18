@@ -1,10 +1,11 @@
 """
-Week 6 assignment
 squareroot.py
-A function which calculates the root of an inputted number
-Uses Newton-Raphson method: 
-https://en.wikipedia.org/wiki/Newton%27s_method
+Week 6 PANDS assignment
 Author: Eilis Donohue
+Description: A function which calculates the root of an inputted number
+using Newton-Raphson method: 
+***The program is fully commented and reproduced in  README.ipynb***
+https://en.wikipedia.org/wiki/Newton%27s_method
 """
 
 

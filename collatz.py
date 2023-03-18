@@ -2,9 +2,10 @@
 collatz.py
 Author: Eilis Donohue
 week 4 assignment
-take a positive integer value
+Description: take a positive integer value
 apply collatz conjecture to it, appending each value to a list
 print the values of the list
+***The program is fully commented and reproduced in  README.ipynb***
 '''
 
 # define variable user_list as the list for the calculated values

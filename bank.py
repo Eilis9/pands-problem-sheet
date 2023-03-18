@@ -1,8 +1,10 @@
-''' bank.py
-Week 2 PANDS task assignment 
+'''
+bank.py
+Week 2 PANDS assignment 
 Author: Eilis Donohue
-Prompts the user for 2 integer inputs 
+Description: Prompts the user for 2 integer inputs 
 Adds these and outputs the answer in euro and cent
+***The program is fully commented and reproduced in  README.ipynb***
 '''
 
 # Prompt the user for input 
