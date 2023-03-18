@@ -3,7 +3,6 @@ Week 5 PANDS assignment
 Author: Eilis Donohue
 Description: Program which prints if the current day is a weekday or weekend
 ***The program is fully commented and reproduced in  README.ipynb***
-
 """
 
 # import the datetime class from the datetime module
