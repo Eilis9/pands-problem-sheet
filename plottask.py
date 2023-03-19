@@ -37,8 +37,9 @@ random_data = rng.normal(loc=mean, scale=stdev, size=pop_size)
 # the histogram applying .floor and .ceil to the min and max of the data.
 random_data_floor = math.floor(random_data.min())
 random_data_ceiling = math.ceil(random_data.max())
-# Define the array of bins using the min and max data - (add 1 to capture the upper bound of the data)
-bins = np.arange(random_data_floor, random_data_ceiling+1, bin_size)
+# Define the array of bins using the min and max data - 
+# Add 1 bin_size to he upper to capture the upper bound of the data
+bins = np.arange(random_data_floor, random_data_ceiling+bin_size, bin_size)
 
 # Define a numpy array with lower and upper bounds
 # Assuming the brief is asking for data up to and including 10 so adding 1
