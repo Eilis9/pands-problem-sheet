@@ -20,6 +20,8 @@ rng = np.random.default_rng(3)
 mean = 5
 stdev = 2
 pop_size = 1000
+# Set the bin_size for the histogram
+bin_size = 0.5
 # Set the parameters for the function definition 
 # assuming here that up to and including x=10 is required to be plotted
 x_lower_range = 0
@@ -29,7 +31,9 @@ y_major_tick = 50
 y_minor_tick = 10
 x_major_tick = 1
 x_minor_tick = 0.5
-bin_size = 0.5
+# set the y-axis upper bound
+yaxis_upper_bound = 150
+
 
 # Generate a numpy array or normally distributed data 
 random_data = rng.normal(loc=mean, scale=stdev, size=pop_size)
@@ -66,11 +70,11 @@ plt.plot(x, y, color='red', label='y=x^3')
 # As the function data plotted is deterministic, there is no value in showing
 # the function y=x^3 to its upper y-extent as the normal distributed data is not
 # well displayed as a result.
-plot_yaxis_max = (hist_max_y + y_major_tick) // y_major_tick
-plot_yaxis_max = plot_yaxis_max * y_major_tick
+#plot_yaxis_max = (hist_max_y + y_major_tick) // y_major_tick
+#plot_yaxis_max = plot_yaxis_max * y_major_tick
 
-# set the axis upper and lower bounds
-plt.axis([random_data_floor, random_data_ceiling, 0, plot_yaxis_max])
+# Set the axes upper and lower bounds
+plt.axis([random_data_floor, random_data_ceiling, 0, yaxis_upper_bound])
 
 # apply the x and y labels
 plt.xlabel("X")
