@@ -308,7 +308,7 @@ else:
 
 - - - 
 
-## Task 6 (squareroot.py) <a id="task6"></a> <span style="font-size: 8pt;"> [[TOC]](#toc)</span>
+## Task 6 (squareroot.py) <a id="task6"></a> <span style="font-size: 6pt;"> [[TOC]](#toc)</span>
 
 
 **Task Description:**
@@ -594,7 +594,7 @@ plt.show()
 
 
     
-![img/png](output_39_0.png)
+![plot](img/output_39_0.png)
     
 
 
