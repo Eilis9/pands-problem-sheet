@@ -28,7 +28,7 @@ Software Used:
 
  - - -
 
-## Task 1 (helloworld.py) <a id="task1"></a> <span style="font-size: 8pt;"> [TOC](#toc)</span>
+## Task 1 (helloworld.py) <a id="task1"></a> <span style="font-size: 3pt;">[TOC](#toc)</span>
 
 Task Description:
 
