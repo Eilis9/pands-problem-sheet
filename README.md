@@ -7,7 +7,9 @@ Lecturer: Andrew Beatty
     
 Student: Eilis Donohue (G00006088)
 
-A repository for the solutions to the problem sheets given in the Programming and Scripting Module of the HDip in Data Analytics beginning January 2023. All programs except for es.py may be run in this Jupyter Notebook. The .ipynb notebook should be run locally (not on github). This page is frontpage facsimile of the .ipynb notebook.
+A repository for the solutions to the problem sheets given in the Programming and Scripting Module of the HDip in Data Analytics beginning January 2023. 
+
+This readme is a markdown copy of the Jupyter notebook (readme.ipynb). This notebook contains all the code in the .py files in the repository. 
 
 Software Used: 
  - Python v3.7 and higher  
@@ -28,7 +30,7 @@ Software Used:
 
  - - -
 
-## Task 1 (helloworld.py) <a id="task1"></a> <span style="color:green;font-weight:700;font-size:8px">[[TOC]](#toc)</span>
+## Task 1 (helloworld.py) <a id="task1"></a> <span style="font-size: 8pt;"> [[TOC]](#toc)</span>
 
 Task Description:
 
@@ -72,14 +74,7 @@ The sum of these is €2.45
 #Prompt the user for 2 inputs and store these as integers
 input1 = int(input("Enter amount1(in cent): "))
 input2 = int(input("Enter amount2(in cent): "))
-```
 
-    Enter amount1(in cent): 123
-    Enter amount2(in cent): 132
-    
-
-
-```python
 # Add the 2 inputs 
 total_cent = input1 + input2
 
@@ -103,13 +98,15 @@ euro_amount = total_cent[:-2]
 print(f"The sum of these is €{euro_amount}.{cent_amount}")
 ```
 
+    Enter amount1(in cent): 123
+    Enter amount2(in cent): 132
     The sum of these is €2.55
     
 
 **Program Notes:**
 - The program will throw an error if anything other than an integer is entered.
 - As this task refers to banks handling currency amounts as integer types to avoid floating point errors, the assumption is made that float types are to be avoided. Therefore string manipulation is used to find the euro and cent amounts.
-- Alternatively, the // and % operands may be used to find euro and cent amounts (//100, %100), however, in the case of total cent amounts <10, % will return a cent amount that requires padding.
+- Alternatively, the // and % operands may be used to find euro and cent amounts (//100, %100), however, in the case of total cent amounts that are less than 10c, % will return a cent amount that requires padding.
 
 **References:**
 1. String formatting https://www.w3schools.com/python/python_string_formatting.asp <a id="ref2.1"></a> 
@@ -136,14 +133,6 @@ XXXXXX7890
 # Prompt the user for a 10 digit account number. This input is stored as a string variable
 user_input = input("Please enter a 10 digit account number: ")
 
-
-```
-
-    Please enter a 10 digit account number: 1234567890
-    
-
-
-```python
 # Strip any whitespace from the start and the end of the string input.
 user_input = user_input.strip()
 
@@ -160,6 +149,10 @@ output_string = end_chars.rjust(input_string_length, 'X')
 # Print the resulting output string to screen
 print(output_string)
 ```
+
+    Please enter a 10 digit account number: 1234567890
+    XXXXXX7890
+    
 
 **Program Notes:**
 
@@ -200,25 +193,26 @@ Please enter a positive integer: 10
 
 
 ```python
+# Do some checking on user input allowing for any input and looping until
+# a postive int is entered. if the value is not an int then an exception is 
+# thrown, if it's an int but negative, another pass of the loop is made.
+# The loop can only be broken out of when a positive integer is entered [Ref 3]
+while True:   
+    try:
+        user_inp = int(input("Please enter a positive integer: "))
+        if user_inp > 0:
+            break
+        else:
+            print("Not a positive integer value")
+    except ValueError:
+        print("Not a positive integer value")
+
 # Define the variable user_list as the list for the calculated values
 user_list = []
 
-# Initialise the user_inp so that the loop to ask for user input will run
-user_inp = -1
-
-# Execute this loop until the user inputs a positive int
-while user_inp <= 0:
-    user_inp = int(input("Please enter a positive integer: "))
-
 # Store the user input in the defined list
 user_list.append(user_inp)
-```
 
-    Please enter a positive integer: 10
-    
-
-
-```python
 # This loop applies the Collatz rules [Ref 1] - it will loop while the calculated number is not equal to 1
 while user_inp != 1:
     # Checks if the number is positive or negative and apply appropriate collatz
@@ -241,17 +235,25 @@ for item in user_list:
 print()
 ```
 
+    Please enter a positive integer: g
+    Not a positive integer value
+    Please enter a positive integer: 2.1
+    Not a positive integer value
+    Please enter a positive integer: -4
+    Not a positive integer value
+    Please enter a positive integer: 10
     10 5 16 8 4 2 1 
     
 
 **Program Notes:**
 - The program applies the Collatz conjecture on any positive integer [[Ref 1]](#ref4.1)
 - The program will throw an error if a float type is entered. 
-- The input message will repeat until a positive number is entered.
+- There is an infinite loop for the input which has a try statement to check if the value is an int. If an int is entered then there is a check for it being positive. The loop is only broken if the user enters a positive integer [[Ref 3]](#ref4.3)
 
 **References:**
 1. The Collatz Conjecture https://www.youtube.com/watch?v=094y1Z2wpJg&t=1 <a id="ref4.1"></a> 
 2. Print on same line with spaces https://w3cschoool.com/tutorial/how-to-print-in-same-line-in-python
+3. Try, Except https://www.w3schools.com/python/python_try_except.asp <a id="ref4.3"></a> 
 
 - - - 
 
@@ -308,7 +310,7 @@ else:
 
 - - - 
 
-## Task 6 (squareroot.py) <a id="task6"></a> <span style="font-size: 6pt;"> [[TOC]](#toc)</span>
+## Task 6 (squareroot.py) <a id="task6"></a> <span style="font-size: 8pt;"> [[TOC]](#toc)</span>
 
 
 **Task Description:**
@@ -363,10 +365,7 @@ def sqrt(a, tolerance=0.0001):
     
     # Function returns the calculated root    
     return x1
-```
 
-
-```python
 # Take in the value to be calculated and assign as float type
 inputted_value = float(input("Please enter a positive number: "))
 # Call the function, passing the inputted_value to it.
@@ -594,7 +593,7 @@ plt.show()
 
 
     
-![plot](img/output_39_0.png)
+![png](readme_files/readme_35_0.png)
     
 
 
