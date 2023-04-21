@@ -8,7 +8,6 @@ print the values of the list
 ***The program is fully commented and reproduced in  README.ipynb***
 '''
 
-
 # Do some checking on user input allowing for any input and looping until
 # a postive int is entered. if the value is not an int then an exception is 
 # thrown, if it's an int but negative, another pass of the loop is made.
@@ -25,10 +24,7 @@ while True:
 
 # define variable user_list as the list for the calculated values
 user_list = []   
-    
-#while user_inp <= 0:
-#    user_inp = int(input("Please enter a positive integer: "))
-
+  
 # store the user input in the list
 user_list.append(user_inp)
 
@@ -36,7 +32,7 @@ user_list.append(user_inp)
 while user_inp != 1:
     # checks if positive or negative
     if user_inp % 2 == 0:
-        user_inp = int(user_inp // 2) # Using // to return an int
+        user_inp = int(user_inp / 2) 
     else:
         user_inp = int((user_inp * 3) + 1)
     # appends the calculated value to the list    
