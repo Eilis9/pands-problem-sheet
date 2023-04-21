@@ -4,7 +4,7 @@ Week 2 PANDS assignment
 Author: Eilis Donohue
 Description: Prompts the user for 2 integer inputs 
 Adds these and outputs the answer in euro and cent
-***The program is fully commented and reproduced in  README.ipynb***
+***The program is fully commented and reproduced in README.ipynb***
 '''
 
 # Prompt the user for input 
@@ -20,7 +20,7 @@ total_cent = str(total_cent)
 # Last 2 digits of the string is the cent amount and everything else is euro.
 # This avoids dividing and float types 
 
-# Unless the total_cent amount is 10c or less when leading zeroes are
+# Unless the total_cent amount is 10c or less, then leading zeroes are
 # required. 
 leading_zeroes = "0" * (3 - len(total_cent))
 total_cent = leading_zeroes + total_cent    

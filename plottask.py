@@ -10,7 +10,7 @@ Description: A program which plots y=x^3 and a histogram with normal distributio
 import numpy as np
 import matplotlib.pyplot as plt
 import math
-# See ref [x] - for setting the ticks on the x and y axis
+# Setting the ticks on the x and y axis
 from matplotlib.ticker import (MultipleLocator, AutoMinorLocator)
 
 # Set a range object to be a seeded random generator (for repeatability)
@@ -23,7 +23,7 @@ pop_size = 1000
 # Set the bin_size for the histogram
 bin_size = 0.5
 # Set the parameters for the function definition 
-# assuming here that up to and including x=10 is required to be plotted
+# assuming here that up to and including x=10 is required to be plotted (see below)
 x_lower_range = 0
 x_upper_range = 10
 # Pick a major and minor axis ticks to suit the data
@@ -43,7 +43,7 @@ random_data_floor = math.floor(random_data.min())
 random_data_ceiling = math.ceil(random_data.max())
 # Define the array of bins using the min and max data - 
 # Add 1 bin_size to he upper to capture the upper bound of the data
-bins = np.arange(random_data_floor, random_data_ceiling+bin_size, bin_size)
+bins = np.arange(random_data_floor, random_data_ceiling + bin_size, bin_size)
 
 # Define a numpy array with lower and upper bounds
 # Assuming the brief is asking for data up to and including 10 so adding 1
@@ -52,8 +52,7 @@ x = np.arange(x_lower_range, x_upper_range + 1, 0.1)
 # Define the function y as x cubed
 y = x**3
 
-
-# Return the fig and ax objects so that the axes ticks can be set[Ref X]
+# Return the fig and ax objects so that the axes ticks can be set
 fig, ax = plt.subplots()
 
 # Plot the histogram, setting the bins equal to the range created
@@ -66,13 +65,9 @@ hist_max_y = n[0].max()
 #Plot the function y=x^3
 plt.plot(x, y, color='red', label='y=x^3')
 
-# Set the maximum value of the y axis to suit the histogram data
 # As the function data plotted is deterministic, there is no value in showing
 # the function y=x^3 to its upper y-extent as the normal distributed data is not
-# well displayed as a result.
-#plot_yaxis_max = (hist_max_y + y_major_tick) // y_major_tick
-#plot_yaxis_max = plot_yaxis_max * y_major_tick
-
+# well displayed as a result. The y-axis upper bound is set above.
 # Set the axes upper and lower bounds
 plt.axis([random_data_floor, random_data_ceiling, 0, yaxis_upper_bound])
 
