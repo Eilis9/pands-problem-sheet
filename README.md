@@ -9,7 +9,7 @@ Student: Eilis Donohue (G00006088)
 
 A repository for the solutions to the problem sheets given in the Programming and Scripting Module of the HDip in Data Analytics beginning January 2023. 
 
-This readme is a markdown copy of the Jupyter notebook (readme.ipynb). This notebook contains all the code in the .py files in the repository. 
+This readme is a markdown copy of the Jupyter notebook (readme.ipynb) where the code can be run.  
 
 Software Used: 
  - Python v3.7 and higher  
@@ -247,7 +247,6 @@ print()
 
 **Program Notes:**
 - The program applies the Collatz conjecture on any positive integer [[Ref 1]](#ref4.1)
-- The program will throw an error if a float type is entered. 
 - There is an infinite loop for the input which has a try statement to check if the value is an int. If an int is entered then there is a check for it being positive. The loop is only broken if the user enters a positive integer [[Ref 3]](#ref4.3)
 
 **References:**
@@ -366,8 +365,18 @@ def sqrt(a, tolerance=0.0001):
     # Function returns the calculated root    
     return x1
 
-# Take in the value to be calculated and assign as float type
-inputted_value = float(input("Please enter a positive number: "))
+# Loop to validate user input - infinite loop, throws exception if input isn't a float, will only break when the value is 
+# positive
+while True:   
+    try:
+        inputted_value = float(input("Please enter a positive number: "))
+        if inputted_value > 0:
+            break
+        else:
+            print("Not a positive number")
+    except ValueError:
+        print("Not a positive number")
+
 # Call the function, passing the inputted_value to it.
 sq_root = sqrt(inputted_value)
 
@@ -380,6 +389,7 @@ print(f"The square root of {inputted_value} is approx. {round(sq_root,1)}.")
     
 
 **Program Notes:**
+
 - The program finds an approximation of a square root of a number (a) iteratively using Newton's method to approximate the root of the function $f(x):x^2-a$. This becomes: [[Ref 1]](#ref6.1)
 
 $$

@@ -22,11 +22,21 @@ def sqrt(a, tolerance=0.0001):
     return x1
 
 
-# Take in the value to be calculated
-inputted_value = float(input("Please enter a positive number: "))
-# Call the function
+# Do some checking on user input looping until a postive int is entered.
+# If the value is not a number then an exception is raised.
+# If the number is negative, another pass of the loop is made.
+# The loop can only be broken out of when a positive number is entered.
+while True:   
+    try:
+        inputted_value = float(input("Please enter a positive number: "))
+        if inputted_value > 0:
+            break
+        else:
+            print("Not a positive number")
+    except ValueError:
+        print("Not a positive number")
+
+# Call the function if the number is positive and digit
 sq_root = sqrt(inputted_value)
 # Print the answer to screen - rounded to 1 decimal place      
 print(f"The square root of {inputted_value} is approx. {round(sq_root,1)}.")    
-
-
